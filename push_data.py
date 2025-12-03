@@ -28,4 +28,5 @@ class NetworkSecurityExtract():
     
     def push_data_mango_db(self,records):
         self.records=records
-        self.mango_client=pymongo.MongoClient(MANG_DB_URL)
+        
+        self.mango_client=pymongo.MongoClient(MANG_DB_URL)  

@@ -12,7 +12,7 @@ load_dotenv()
 MANG_DB_URL=os.getenv('MANG_DB_URL')
 ca=certifi.where()
 
-class NetworkSecurityExtract():
+class NetworkSecurityDataExtract():
     def __init__(self,database,collection):
         try:
             self.dtatbase=database
@@ -27,6 +27,23 @@ class NetworkSecurityExtract():
         return records
     
     def push_data_mango_db(self,records):
-        self.records=records
-        
-        self.mango_client=pymongo.MongoClient(MANG_DB_URL)  
+        try: 
+            self.records=records
+            self.mango_client=pymongo.MongoClient(MANG_DB_URL)
+            self.dtatbase=self.mango_client[self.dtatbase]
+            self.collection=self.mango_client[self.collection]
+            self.collection.insert_many(self.records)
+            return len(self.records)
+        except Exception as e:
+            NetworksecurityException(e,sys)
+
+if __name__=='__main__':
+    FILE_PATH="Network_Data\phisingData.csv"
+    DATABASE="Jai_db"
+    Collection="NetworkData"
+    networkobj=NetworkSecurityDataExtract(DATABASE,Collection)
+    records=networkobj.csv_to_json_conveter(file_path=FILE_PATH)
+    print(records)
+    no_of_records=networkobj.push_data_mango_db(records)
+    print(no_of_records)
+

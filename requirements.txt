@@ -3,5 +3,6 @@ pandas
 numpy
 setuptools
 pymongo[srv]==3.12
-pymango
+pymongo
+scikit-learn
 # -e .

@@ -37,13 +37,13 @@ class NetworkSecurityDataExtract():
         except Exception as e:
             NetworksecurityException(e,sys)
 
-if __name__=='__main__':
-    FILE_PATH="Network_Data\phisingData.csv"
-    DATABASE="Jai_db"
-    Collection="NetworkData"
-    networkobj=NetworkSecurityDataExtract(DATABASE,Collection)
-    records=networkobj.csv_to_json_conveter(file_path=FILE_PATH)
-    print(records)
-    no_of_records=networkobj.push_data_mango_db(records)
-    print(no_of_records)
+# if __name__=='__main__':
+#     FILE_PATH="Network_Data\phisingData.csv"
+#     DATABASE="Jai_db"
+#     Collection="NetworkData"
+#     networkobj=NetworkSecurityDataExtract(DATABASE,Collection)
+#     records=networkobj.csv_to_json_conveter(file_path=FILE_PATH)
+#     print(records)
+#     no_of_records=networkobj.push_data_mango_db(records)
+#     print(no_of_records)
 

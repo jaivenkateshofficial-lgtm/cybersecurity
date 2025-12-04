@@ -1,0 +1,24 @@
+MongoDB
+ └── Database
+       └── Collection
+             └── Documents
+✔ Database
+
+A container (like a folder) that holds collections.
+
+✔ Collection
+
+A group of related documents.
+Equivalent to a table in SQL — but without fixed structure.
+
+Examples of collections:
+
+users
+
+products
+
+transactions
+
+logs
+
+students

@@ -1,0 +1,31 @@
+from datetime import datetime
+import os
+import sys
+import numpy as np
+import pandas as pd
+from networksecurity.exception.exeception import NetworksecurityException
+from networksecurity.constant import trainingpipline
+
+class TrainingPippeLineConfig:
+    def __init__(self,timestamp=datetime.now()):
+        try:
+            self.timestamp=datetime.now().strftime('%d_%m_%Y_%H_%M_%S')
+            self.pipline_name=trainingpipline.PIPELINE_NAME
+            self.artifactname=trainingpipline.ARTICFACT__DIR_NAME
+            self.artifact_dir=os.path.join(self.artifactname,self.timestamp)
+        except Exception as e:
+            NetworksecurityException(e,sys)
+
+class Dataingestionconfig:
+    def __init__ (self,training_pipeline_config:TrainingPippeLineConfig):
+        self.data_ingestion_directory=os.path.join(training_pipeline_config.artifact_dir,trainingpipline.DATA_INGESTION_DIR_NAME)
+        self.feature_store=os.path.join(self.data_ingestion_directory,trainingpipline.DATA_INGESTION_FEATURE_STORE)
+        self.feature_file_path=os.path.join(self.feature_store,trainingpipline.RAW_DATA)
+        self.data_ingested_store=os.path.join(self.data_ingestion_directory,trainingpipline.DATA_INGESTION_INGESTED_DIR)
+        self.train_data_file_path=os.path.join(self.data_ingested_store,trainingpipline.TRAIN_DATA)
+        self.test_data_file_path=os.path.join(self.data_ingested_store,trainingpipline.TEST_DATA)
+        self.train_test_split_ratio=trainingpipline.DATA_INGESTION_TRAIN_TEST_RATIO
+        self.data_base_name=trainingpipline.DATA_INGESTION_DATA_BASE
+        self.data_collection=trainingpipline.DATA_INGESTION_COLLECTIONS
+        self.output_feature_name=trainingpipline.PREDICTION_COLUM
+        self.random_state=trainingpipline.RANDOM_STATE

@@ -21,13 +21,13 @@ from networksecurity.componets.data_injestion import Dataingestion
 if __name__=='__main__':
     try:
         trainpipline=TrainingPippeLineConfig()
-        a=Dataingestionconfig( trainpipline)
+        a=Dataingestionconfig(trainpipline)
         di=Dataingestion(a)
         df=di.create_dataframe_from_database()
         status_feature=di.save_data_in_feature_store(df)
         if status_feature:
-            status_split=di.save_train_test_split(df)
-        if status_split:
-            print(df.info)
+            artifact=di.save_train_test_split(df)
+            print(artifact)
+            
     except Exception as e:
         raise NetworksecurityException(e,sys)

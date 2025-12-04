@@ -11,6 +11,7 @@ from sklearn.model_selection import train_test_split
 from networksecurity.logging.logger import logging
 from networksecurity.exception.exeception import NetworksecurityException
 from networksecurity.entiy.config_entity import Dataingestionconfig
+from networksecurity.entiy.artifact_entity import DataIngestionArtifact
 load_dotenv()
 
 class Dataingestion:
@@ -58,10 +59,11 @@ class Dataingestion:
             testfile=self.data_ingestion_config.test_data_file_path
             insgested=self.data_ingestion_config.data_ingested_store
             os.makedirs(insgested)
-            train_df.to_csv(trainfile)
-            test_df.to_csv(testfile)
-            logging.info("Saveing train and test split completed")
-            return True
+            train_df.to_csv(trainfile,index=False,header=True)
+            test_df.to_csv(testfile,index=False,header=True)
+            logging.info("Saved train and test split completed")
+            data_ingestion_artifact=DataIngestionArtifact( trained_file_path=trainfile,test_file_path=testfile)
+            return data_ingestion_artifact
         
         except Exception as e:
             raise NetworksecurityException(e,sys) 

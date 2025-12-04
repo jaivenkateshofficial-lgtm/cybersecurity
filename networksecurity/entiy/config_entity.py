@@ -29,3 +29,16 @@ class Dataingestionconfig:
         self.data_collection=trainingpipline.DATA_INGESTION_COLLECTIONS
         self.output_feature_name=trainingpipline.PREDICTION_COLUM
         self.random_state=trainingpipline.RANDOM_STATE
+
+class DataValidationConfig:
+    def __init__(self,training_pipeline_config:TrainingPippeLineConfig):
+        self.data_validation_dir=os.path.join(training_pipeline_config.artifact_dir,trainingpipline.DATA_VALIDATION_DIR)
+        self.data_validation_valid=os.path.join(self.data_validation_dir,trainingpipline.DATA_VALIDATION_VALID_DATA)
+        self.data_validation_invalid=os.path.join(self.data_validation_dir,trainingpipline.DATA_VALIDATION_INVALID_DATA)
+        self.train_data_valid_file_path=os.path.join(self.data_validation_valid,trainingpipline.VALID_TRAIN_DATA)
+        self.test_data_valid_file_path=os.path.join(self.data_validation_valid,trainingpipline.VALID_TEST_DATA)
+        self.train_data_invalid_file_path=os.path.join(self.data_validation_invalid,trainingpipline.INVALID_TRAIN_DATA)
+        self.test_data_invalid_file_path=os.path.join(self.data_validation_invalid,trainingpipline.INVALID_TEST_DATA)
+        self.data_validation_schema=trainingpipline.DATA_SHEMA
+        self.distance_threshold=trainingpipline.DATA_VALIDATION_THRESHOLD
+        self.data_validation_report=trainingpipline.DATA_VALIDATION_REPORT

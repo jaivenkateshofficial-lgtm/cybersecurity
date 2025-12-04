@@ -31,7 +31,7 @@ class NetworkSecurityDataExtract():
             self.records=records
             self.mango_client=pymongo.MongoClient(MANG_DB_URL)
             self.dtatbase=self.mango_client[self.dtatbase]
-            self.collection=self.mango_client[self.collection]
+            self.collection=self.dtatbase[self.collection]
             self.collection.insert_many(self.records)
             return len(self.records)
         except Exception as e:

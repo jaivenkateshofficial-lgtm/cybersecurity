@@ -24,3 +24,11 @@ def load_yaml(file_path:str)->dict:
         return data_dict
     except Exception as e:
         raise NetworksecurityException(e,sys)
+    
+def write_yaml(directory,filename,content):
+    try:
+        file_path=os.path.join(directory,filename)
+        with open(file_path,'w') as file_obj:
+            yaml.dump(content,file_obj)
+    except Exception as e:
+        NetworksecurityException(e,sys)

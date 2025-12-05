@@ -19,7 +19,7 @@ VALID_TRAIN_DATA:str="valid_train.csv"
 VALID_TEST_DATA:str="valid_test.csv"
 INVALID_TRAIN_DATA:str="Invalid_train.csv"
 INVALID_TEST_DATA:str="Invalid_test.csv"
-DATA_VALIDATION_THRESHOLD:float=0.5
+DATA_VALIDATION_THRESHOLD:float=0.05
 
 '''
 Data ingestion related conctants

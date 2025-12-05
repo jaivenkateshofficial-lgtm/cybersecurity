@@ -11,7 +11,7 @@ class TrainingPippeLineConfig:
         try:
             self.timestamp=datetime.now().strftime('%d_%m_%Y_%H_%M_%S')
             self.pipline_name=trainingpipline.PIPELINE_NAME
-            self.artifactname=trainingpipline.ARTICFACT__DIR_NAME
+            self.artifactname=trainingpipline.ARTICFACT_DIR_NAME
             self.artifact_dir=os.path.join(self.artifactname,self.timestamp)
         except Exception as e:
             NetworksecurityException(e,sys)

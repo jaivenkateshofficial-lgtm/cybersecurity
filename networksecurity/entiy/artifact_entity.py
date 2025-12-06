@@ -14,4 +14,9 @@ class DataValidationArtifact:
     Invalid_test_file_path:str
     data_report_path:str
 
+@dataclass
+class DataTransformationArtifact:
+    data_tranformation_test_file_path:str
+    data_tranformation_train_file_path:str
+    data_tranformation_object_file_path:str
 

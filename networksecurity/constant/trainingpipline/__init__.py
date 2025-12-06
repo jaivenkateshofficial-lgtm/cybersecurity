@@ -39,5 +39,13 @@ DATA_VALIDATION_VALID_DATA="valid"
 DATA_VALIDATION_INVALID_DATA="Invalid"
 DATA_VALIDATION_REPORT="Report"
 
+'''
+Data transformation related contants
+'''
+DATA_TRANSFORMATION_DIR:str="Datatranformation"
+DATA_TRANSFORMATION_TRAIN_FILE_NAME:str="train.npy"
+DATA_TRANSFORMATION_TEST_FILE_NAME:str="test.npy"
+DATA_TRANSFORMATION_OBJECT_FILE_NAME:str="preprocesser.pkl"
+
 
 

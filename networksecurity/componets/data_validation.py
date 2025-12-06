@@ -36,11 +36,13 @@ class Datavalidation:
         
     def validate_number_of_colums(self,data_frame:pd.DataFrame):
         try:
+            logging.info("validating number of numerical colums of orinal and actual data")
             no_of_columns_expected=len(self.data_schema_config['columns'])
             no_of_columns_actual=len(data_frame.columns.to_list())
             validation_status=False
             if no_of_columns_expected==no_of_columns_actual:
                 validation_status=True
+            logging.info(f"The validation status true is pass and false is fail{validation_status}")
             return validation_status
         except Exception as e:
             raise NetworksecurityException(e,sys)
@@ -48,17 +50,20 @@ class Datavalidation:
     
     def validate_numerical_columns(self,data_frame:pd.DataFrame):
         try:
+            logging.info("comparing the numerical columns of test and train data")
             no_of_num_columns_expeted=len(self.data_schema_config['numerical_columns'])
             no_of_columns_actual=len(data_frame.select_dtypes(np.number).columns.tolist())
             validation_status=False
             if no_of_num_columns_expeted==no_of_columns_actual:
                 validation_status=True
+            logging.info(f"The validation status true is pass and false is fail{validation_status}")
             return validation_status
         except Exception as e:
             raise NetworksecurityException(e,sys)
     
     def validate_data_drift(self,base_df:pd.DataFrame,current_df:pd.DataFrame):
         try:
+            logging.info("validating data drift happed in the data")
             report={}
             all_column_status=True
             for columns in base_df.columns:
@@ -82,6 +87,7 @@ class Datavalidation:
             drift_report_file_path=self.data_validation_config.data_validation_report
             os.makedirs(drift_report_file_path,exist_ok=True)
             write_yaml(directory=drift_report_file_path,filename='drift_report',content=report)
+            logging.info(f"The validation status true is pass and false is fail{all_column_status}")
             return all_column_status
         except Exception as e:
             raise NetworksecurityException(e,sys)
@@ -89,6 +95,7 @@ class Datavalidation:
     def Intilaize_data_validation(self):
 
         try:
+            logging.info('Data validation has started')
             train_file_path=self.data_ingestion_artifact.trained_file_path
             test_file_path=self.data_ingestion_artifact.test_file_path
             drift_report_file_path=self.data_validation_config.data_validation_report

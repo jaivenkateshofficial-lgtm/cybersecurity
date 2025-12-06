@@ -42,3 +42,10 @@ class DataValidationConfig:
         self.data_validation_schema=trainingpipline.DATA_SHEMA
         self.distance_threshold=trainingpipline.DATA_VALIDATION_THRESHOLD
         self.data_validation_report=trainingpipline.DATA_VALIDATION_REPORT
+
+class DataTranformationConfig:
+    def __init__(self,training_pipeline_config:TrainingPippeLineConfig):
+       self.data_transformation_dir=os.path.join(training_pipeline_config.artifact_dir,trainingpipline.DATA_VALIDATION_DIR)
+       self.data_transformation_train_file_path=os.path.join(self.data_transformation_dir,trainingpipline.DATA_TRANSFORMATION_TRAIN_FILE_NAME)
+       self.data_transformation_test_file_path=os.path.join(self.data_transformation_dir,trainingpipline.DATA_TRANSFORMATION_TEST_FILE_NAME)
+       self.data_transformation_object_file_path=os.path.join(self.data_transformation_dir,trainingpipline.DATA_TRANSFORMATION_OBJECT_FILE_NAME)

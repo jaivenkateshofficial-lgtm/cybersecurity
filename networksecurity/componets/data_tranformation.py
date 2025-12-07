@@ -10,6 +10,7 @@ from networksecurity.entiy.artifact_entity import DataValidationArtifact,DataTra
 from networksecurity.entiy.config_entity import DataTranformationConfig
 from networksecurity.logging.logger import logging
 from networksecurity.exception.exeception import NetworksecurityException
+from networksecurity.constant.trainingpipline import PREDICTION_COLUM
 
 class DataTransformation:
 
@@ -21,7 +22,7 @@ class DataTransformation:
             NetworksecurityException(e,sys)    
 
     @staticmethod
-    def read_csv(file_path:str):
+    def read_csv(file_path:str)->pd.DataFrame:
         try:
             pd.read_csv(file_path)
         except Exception as e:
@@ -34,4 +35,9 @@ class DataTransformation:
         test_file_path=self.data_validation_artifact.valid_test_file_path
         train_df=DataTransformation.read_csv(train_file_path)
         test_df=DataTransformation.read_csv(test_file_path)
+        input_features_train=train_df.drop(columns=[PREDICTION_COLUM])
+        output_features_train=train_df[PREDICTION_COLUM]
+        input_features_test=test_df.drop(columns=[PREDICTION_COLUM])
+        output_features_test=test_df([PREDICTION_COLUM])
+
 

@@ -2,9 +2,9 @@ import os
 import yaml
 import sys
 
-import numpy
+import numpy as np
 import pandas as pd
-
+import pickle
 from networksecurity.exception.exeception import NetworksecurityException
 
 def load_yaml(file_path:str)->dict:
@@ -30,5 +30,23 @@ def write_yaml(directory,filename,content):
         file_path=os.path.join(directory,filename)
         with open(file_path,'w') as file_obj:
             yaml.dump(content,file_obj)
+    except Exception as e:
+        NetworksecurityException(e,sys)
+
+def save_numpy_array(file_path,array)->None:
+    try:
+        dir_name=os.path.dirname(file_path)
+        os.makedirs(dir_name,exist_ok=True)
+        with open(file_path,'wb') as file_object:
+            np.save(file_object,array)
+    except Exception as e:
+        NetworksecurityException(e,sys)
+
+def save_object(file_path,object):
+    try:
+        dir_name=os.path.dirname(file_path)
+        os.makedirs(dir_name,exist_ok=True)
+        with open(file_path,'wb') as file_object:
+            pickle.dump(object,file_object)
     except Exception as e:
         NetworksecurityException(e,sys)

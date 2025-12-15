@@ -17,7 +17,8 @@ from networksecurity.exception.exeception import NetworksecurityException
 from networksecurity.entiy.config_entity import Dataingestionconfig,TrainingPippeLineConfig
 from networksecurity.componets.data_injestion import Dataingestion
 from networksecurity.componets.data_validation import Datavalidation
-from networksecurity.entiy.config_entity import DataValidationConfig
+from networksecurity.entiy.config_entity import DataValidationConfig,DataTranformationConfig
+from networksecurity.componets.data_tranformation import DataTransformation
 
 
 if __name__=='__main__':
@@ -31,7 +32,10 @@ if __name__=='__main__':
             dtat_ingestion_artifact=data_ingestion.save_train_test_split(df)
             data_validation_config=DataValidationConfig(trainpipline)
             data_validation=Datavalidation(data_ingestion_artifact=dtat_ingestion_artifact,data_validation_config=data_validation_config)
-            a=data_validation.Intilaize_data_validation()
+            data_validation_artifact=data_validation.Intilaize_data_validation()
+            data_transformation_config=DataTranformationConfig(training_pipeline_config=trainpipline)
+            data_transformation=DataTransformation(data_transformation_config=data_transformation_config,data_validation_artifact=data_validation_artifact)
+            data_transformation_artifact=data_transformation.intialise_data_transformation()
 
             
     except Exception as e:

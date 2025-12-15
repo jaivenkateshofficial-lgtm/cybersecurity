@@ -46,6 +46,11 @@ DATA_TRANSFORMATION_DIR:str="Datatranformation"
 DATA_TRANSFORMATION_TRAIN_FILE_NAME:str="train.npy"
 DATA_TRANSFORMATION_TEST_FILE_NAME:str="test.npy"
 DATA_TRANSFORMATION_OBJECT_FILE_NAME:str="preprocesser.pkl"
+DATA_TRANSFORMATION_IMPUTER_PARAMS:dict={
+    'missing_values':np.nan,
+    'n_neighbors':3,
+    'weights':'uniform'
+}
 
 
 

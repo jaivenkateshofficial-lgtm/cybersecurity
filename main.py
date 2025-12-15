@@ -31,7 +31,7 @@ if __name__=='__main__':
             dtat_ingestion_artifact=data_ingestion.save_train_test_split(df)
             data_validation_config=DataValidationConfig(trainpipline)
             data_validation=Datavalidation(data_ingestion_artifact=dtat_ingestion_artifact,data_validation_config=data_validation_config)
-            data_validation.Intilaize_data_validation()
+            a=data_validation.Intilaize_data_validation()
 
             
     except Exception as e:

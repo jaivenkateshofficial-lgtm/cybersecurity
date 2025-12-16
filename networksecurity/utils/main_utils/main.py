@@ -60,7 +60,7 @@ def load_pickle_object(file_path:str):
     except Exception as e:
         NetworksecurityException(e,sys)
 
-def load_numpy_array(file_path:str):
+def load_numpy_array(file_path:str)->np.array:
     try:
         if not (os.path.exists(file_path)):
             raise Exception

@@ -3,3 +3,8 @@
 networksecurity.egg-info
 Artifact/
 logs/
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd

@@ -20,3 +20,15 @@ class DataTransformationArtifact:
     data_tranformation_train_file_path:str
     data_tranformation_object_file_path:str
 
+@dataclass
+class Classificationreport:
+    fl_score:int
+    precision:int
+    recall:int
+
+@dataclass
+class ModeltrainingArtifact:
+    trained_model_file_path:str
+    train_metric_artifact:str
+    test_metric_artifact:str
+

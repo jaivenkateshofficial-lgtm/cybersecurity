@@ -52,5 +52,12 @@ DATA_TRANSFORMATION_IMPUTER_PARAMS:dict={
     'weights':'uniform'
 }
 
+'''
+Model training related constants
+'''
+MODEL_TRAINING_DIR:str="modeltraing"
+BEST_MODEL_NAME:str="model.pkl"
+MODEL_BASE_THRESHOLD:float=0.6
+MODEL_OVERFITTING_UNDERFITTING_THRESHOLD:float=0.05
 
 

@@ -65,6 +65,7 @@ def load_numpy_array(file_path:str)->np.array:
         if not (os.path.exists(file_path)):
             raise Exception
         with open(file_path) as file_obj:
-            np.load(file_obj)
+            array=np.load(file_obj)
+        return array
     except Exception as e:
         NetworksecurityException(e,sys)

@@ -8,7 +8,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import f1_score,recall_score,precision_score
 
 
-def get_model_selction_report(models:dict,params,x_train,y_train,x_test,y_test):
+def get_model_selction_report(models:dict,params,x_train,y_train,x_test,y_test)->dict:
     report={}
     for i in range(len(list(models))):
         model:DecisionTreeClassifier=list(models.values)[i]
@@ -31,9 +31,6 @@ def get_model_selction_report(models:dict,params,x_train,y_train,x_test,y_test):
         }
 
         return report
-    
-def get_the_best_model_from_report(report):
-    pass
 
 
 

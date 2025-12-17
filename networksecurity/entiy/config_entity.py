@@ -53,6 +53,6 @@ class DataTranformationConfig:
 class ModelTrainingConfig:
     def __init__(self,training_pipeline_config:TrainingPippeLineConfig):
         self.model_training_dir=os.path.join(training_pipeline_config.artifact_dir,trainingpipline.MODEL_TRAINING_DIR)
-        self.model_trained_file_path=os.path.join(self.model_trained_file_path,trainingpipline.BEST_MODEL_NAME)
+        self.model_trained_file_path=os.path.join(self.model_training_dir,trainingpipline.BEST_MODEL_NAME)
         self.model_expected_threshold=trainingpipline.MODEL_BASE_THRESHOLD
         self.overfittting_underfitting_threshold=trainingpipline.MODEL_OVERFITTING_UNDERFITTING_THRESHOLD

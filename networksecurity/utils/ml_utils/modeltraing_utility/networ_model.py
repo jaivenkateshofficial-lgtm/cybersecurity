@@ -15,16 +15,16 @@ class Networkmodel:
     def  __init__(self,preprocessor,model):
         try:
             self.preprocessor=preprocessor
-            self.model:DecisionTreeClassifier=model
+            self.model=model
         except Exception as e:
             NetworksecurityException(e,sys)
 
     def predict_values(self,x):
         try:
-            Preprocessor=self.preprocessor
+            preprocessor=self.preprocessor
             model=self.model
-            x_transformed=Preprocessor.transform(x)
+            x_transformed=preprocessor.transform(x)
             y_pred=model.predict(x_transformed)
             return y_pred
         except Exception as e:
-            NetworksecurityException(e,sys)
+            raise NetworksecurityException(e,sys)

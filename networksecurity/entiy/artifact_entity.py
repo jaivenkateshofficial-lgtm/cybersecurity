@@ -31,4 +31,3 @@ class ModeltrainingArtifact:
     trained_model_file_path:str
     train_metric_artifact:str
     test_metric_artifact:str
-

@@ -1,0 +1,14 @@
+artifact_path: file:C:/Users/jaive/OneDrive/Desktop/Ds_cybersecurity/cybersecurity/mlruns/0/models/m-1a150a4bc6104528b197265223dc777c/artifacts
+flavors:
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.2
+mlflow_version: 3.7.0
+model_id: m-1a150a4bc6104528b197265223dc777c
+model_size_bytes: 31682933
+model_uuid: m-1a150a4bc6104528b197265223dc777c
+prompts: null
+run_id: ec6a9b02273045c1af3acea991df17c2
+utc_time_created: '2025-12-19 17:54:13.005142'

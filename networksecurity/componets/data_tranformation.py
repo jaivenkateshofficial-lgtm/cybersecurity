@@ -50,6 +50,7 @@ class DataTransformation:
         input_features_test:pd.DataFrame=test_df.drop(columns=[PREDICTION_COLUM])
         output_features_test:pd.DataFrame=test_df[PREDICTION_COLUM]
         output_features_test:pd.DataFrame=output_features_test.replace(-1,0)
+        output_features_train:pd.DataFrame=output_features_train.replace(-1,0)
         preprocessor=self.get_data_transformation_object()
         
         preprocessor_fitted=preprocessor.fit(input_features_train)

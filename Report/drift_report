@@ -16,103 +16,103 @@ Abnormal_URL:
     - -1
     - 0
   - !!binary |
-    mS/jRfz/7z8=
+    l87BzKdf7j8=
 DNSRecord:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    JQd41us97T8=
+    41oOxv3/7z8=
 Domain_registeration_length:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    AAAAAAAA8D8=
+    uaDw4PMq7z8=
 Favicon:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    AAAAAAAA8D8=
+    BKveC2RB0D8=
 Google_Index:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    1f//////7z8=
+    NqDO/v//7z8=
 HTTPS_token:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    EOA9Rf//7z8=
+    bCS6+f//7z8=
 Iframe:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    w6nFzAzS7z8=
+    hh+/Gnde4D8=
 Links_in_tags:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    xjD5PMhHzz8=
+    3QwLz/Aw5z8=
 Links_pointing_to_page:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    mS/jRfz/7z8=
+    2Pe25MuX6z8=
 Page_Rank:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    1f//////7z8=
+    9ZEmBZ2a7z8=
 Prefix_Suffix:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    6eJJFALQ7j8=
+    C6/ecfX+7z8=
 Redirect:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    rV7v////7z8=
+    8bIfXZv+7z8=
 Request_URL:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    AAAAAAAA8D8=
+    GNo/vM3/7z8=
 Result:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    AAAAAAAA8D8=
+    9aP9xiam7z8=
 RightClick:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    wZAntt3/7z8=
+    2Pe25MuX6z8=
 SFH:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    lSS8mbf/7z8=
+    ytD/dRHe7z8=
 SSLfinal_State:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    lG00wBkA7z8=
+    vU61n6X36j8=
 Shortining_Service:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
@@ -124,76 +124,76 @@ Statistical_report:
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    AAAAAAAA8D8=
+    Bsjxd3Vu6D8=
 Submitting_to_email:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    AAAAAAAA8D8=
+    9ZEmBZ2a7z8=
 URL_Length:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    AAAAAAAA8D8=
+    TUpVaAf87z8=
 URL_of_Anchor:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    1f//////7z8=
+    IEEv5UrS1T8=
 age_of_domain:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    kbcTUNaF3D8=
+    AAAAAAAA8D8=
 double_slash_redirecting:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    EOA9Rf//7z8=
+    mS/jRfz/7z8=
 having_At_Symbol:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    AAAAAAAA8D8=
+    6eJJFALQ7j8=
 having_IP_Address:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    UAH25ZcV6j8=
+    DLom0xix5z8=
 having_Sub_Domain:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    tTRsiA/D7z8=
+    uXkuC+n/7z8=
 on_mouseover:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    AAAAAAAA8D8=
+    Iv+JWevk0j8=
 popUpWidnow:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    AAAAAAAA8D8=
+    IY8GaODnwT8=
 port:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    zaBX73D/7z8=
+    hh+/Gnde4D8=
 web_traffic:
   failure_status: false
   pvalue: !!python/object/apply:numpy._core.multiarray.scalar
   - *id001
   - !!binary |
-    7wL7mf//7z8=
+    oPAx/f//7z8=

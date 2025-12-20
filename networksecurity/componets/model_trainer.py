@@ -17,7 +17,11 @@ from networksecurity.utils.ml_utils.metrics_utils.classification_metrics import 
 from networksecurity.utils.ml_utils.modeltraing_utility.modeltraing_utils import examine_the_model
 from networksecurity.utils.ml_utils.modeltraing_utility.networ_model import Networkmodel
 from networksecurity.entiy.artifact_entity import ModeltrainingArtifact
+from networksecurity.constant.trainingpipline import FINAL_MODEL_DIR,MODEL_FILE_NAME,PREPROCESSOR_FILE_NAME
 import  mlflow
+import dagshub
+dagshub.init(repo_owner='jaivenkateshofficial-lgtm', repo_name='cybersecurity', mlflow=True)
+
 class ModelTrainer:
 
     def __init__(self,data_tranformation_artifact:DataTransformationArtifact,model_trainer_config:ModelTrainingConfig):
@@ -52,13 +56,13 @@ class ModelTrainer:
                 'max_depth':[10,12,13,5]
             },
              "LogisticRegression": {
-                # 'solver': ['liblinear', 'saga'],
-                # 'penalty': ['l1', 'l2'],
+                'solver': ['liblinear', 'saga'],
+                'penalty': ['l1', 'l2'],
                 'C': [0.1, 1.0, 10.0]
             },
             "RandomForestClassifier":{
-                # 'criterion':['gini', 'entropy', 'log_loss'],
-                # 'max_features':['sqrt','log2',None],
+                'criterion':['gini', 'entropy', 'log_loss'],
+                'max_features':['sqrt','log2',None],
                 'n_estimators': [8,16,32,128,256]
             },
             
@@ -67,9 +71,9 @@ class ModelTrainer:
                 'n_estimators': [8,16,32,64,128,256]
             },
             "GradientBoostingClassifier":{
-                # 'learning_rate':[.1,.01,.05,.001],
-                # 'subsample':[0.6,0.7,0.75,0.85,0.9],
-                # 'criterion':['squared_error', 'friedman_mse'],
+                'learning_rate':[.1,.01,.05,.001],
+                'subsample':[0.6,0.7,0.75,0.85,0.9],
+                'criterion':['squared_error', 'friedman_mse'],
                 'max_features':['sqrt','log2'],
                 'n_estimators': [8,16,32,64,128,256]
             }
@@ -80,7 +84,6 @@ class ModelTrainer:
         best_model_name = list(report.keys())[
             list(report.values()).index(best_model_score)
         ]
-
         preprocessor=load_pickle_object(self.data_tranformation_atrifact.data_tranformation_object_file_path)
         best_model=Networkmodel(preprocessor=preprocessor,model=models[best_model_name])
         y_train_pred=best_model.predict_values(x_train)
@@ -91,6 +94,8 @@ class ModelTrainer:
         self.track_ml_flow(best_model,classification_test_data_report)
 
         model_trained_artifact=ModeltrainingArtifact(trained_model_file_path=self.model_trainer_config.model_trained_file_path,train_metric_artifact=classification_train_data_report,test_metric_artifact=classification_test_data_report)
+        model_file_path=os.path.join(FINAL_MODEL_DIR,MODEL_FILE_NAME)
+        save_object(model_file_path,best_model)
         logging.info(f"model trained artifact:{model_trained_artifact}")
         return model_trained_artifact
 

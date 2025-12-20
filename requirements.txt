@@ -8,4 +8,6 @@ scikit-learn
 pyyaml
 dill
 mlflow
+dagshub
+fastapi
 # -e .

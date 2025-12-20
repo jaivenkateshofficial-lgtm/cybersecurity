@@ -12,6 +12,7 @@ from networksecurity.logging.logger import logging
 from networksecurity.exception.exeception import NetworksecurityException
 from networksecurity.constant.trainingpipline import PREDICTION_COLUM,DATA_TRANSFORMATION_IMPUTER_PARAMS
 from networksecurity.utils.main_utils.main import save_numpy_array,save_object
+from networksecurity.constant.trainingpipline import FINAL_MODEL_DIR,MODEL_FILE_NAME,PREPROCESSOR_FILE_NAME
 
 class DataTransformation:
 
@@ -61,6 +62,8 @@ class DataTransformation:
         save_object(file_path=self.data_transformation_config.data_transformation_object_file_path,object=preprocessor_fitted)
         save_numpy_array(self.data_transformation_config.data_transformation_train_file_path,total_train_data)
         save_numpy_array(self.data_transformation_config.data_transformation_test_file_path,total_test_data)
+        pre_preprocessor_file_path=os.path.join(FINAL_MODEL_DIR,PREPROCESSOR_FILE_NAME)
+        save_object(file_path=pre_preprocessor_file_path,object=preprocessor_fitted)
         data_transformation_artifact=DataTransformationArtifact(
             data_tranformation_object_file_path=self.data_transformation_config.data_transformation_object_file_path,
             data_tranformation_train_file_path=self.data_transformation_config.data_transformation_train_file_path,

@@ -20,6 +20,9 @@ VALID_TEST_DATA:str="valid_test.csv"
 INVALID_TRAIN_DATA:str="Invalid_train.csv"
 INVALID_TEST_DATA:str="Invalid_test.csv"
 DATA_VALIDATION_THRESHOLD:float=0.05
+FINAL_MODEL_DIR:str="final_model"
+PREPROCESSOR_FILE_NAME:str="preprocesser.pkl"
+MODEL_FILE_NAME:str="model.pkl"
 
 '''
 Data ingestion related conctants

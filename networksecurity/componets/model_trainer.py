@@ -22,7 +22,10 @@ import  mlflow
 import dagshub
 from dotenv import load_dotenv
 
-load_dotenv()
+if not os.getenv("DAGSHUB_TOKEN"):
+    raise ValueError("DAGSHUB_TOKEN is not set!")
+
+# Initialize DagsHub
 dagshub.init(
     repo_owner="jaivenkateshofficial-lgtm",
     repo_name="cybersecurity",

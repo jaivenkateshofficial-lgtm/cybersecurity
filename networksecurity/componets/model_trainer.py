@@ -26,7 +26,7 @@ load_dotenv()
 
 tocken=os.getenv("DAGSHUB_TOKEN")
 if tocken:
-    dagshub.auth.add_app_token("")
+    dagshub.auth.add_app_token(tocken)
 
 # Initialize DagsHub
 print("DAGSHUB_TOKEN:", os.getenv("DAGSHUB_TOKEN"))

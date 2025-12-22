@@ -31,6 +31,7 @@ database=mongo_client[DATA_INGESTION_DATA_BASE]
 collection=database[DATA_INGESTION_COLLECTIONS]
 
 mango_db_url=os.getenv("MONGO_DB_URL")
+
 app=FastAPI()
 origins=["*"]
 app.add_middleware(
@@ -40,6 +41,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 @app.get("/", tags=["authentication"])
 async def index():
@@ -81,4 +83,4 @@ async def predict_route(request: Request,file: UploadFile = File(...)):
     except Exception as e:
         raise NetworksecurityException(e,sys)
 if __name__=="__main__":
-    app_run(app,host="localhost",port=8000)
+    app_run(app,host="0.0.0.0",port=8000)

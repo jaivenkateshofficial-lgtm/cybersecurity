@@ -24,10 +24,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-if not os.getenv("DAGSHUB_TOKEN"):
-    raise ValueError("DAGSHUB_TOKEN is not set!")
+tocken=os.getenv("DAGSHUB_TOKEN")
+if tocken:
+    dagshub.auth.add_app_token("")
 
 # Initialize DagsHub
+print("DAGSHUB_TOKEN:", os.getenv("DAGSHUB_TOKEN"))
 dagshub.init(
     repo_owner="jaivenkateshofficial-lgtm",
     repo_name="cybersecurity",

@@ -20,12 +20,16 @@ from networksecurity.entiy.artifact_entity import ModeltrainingArtifact
 from networksecurity.constant.trainingpipline import FINAL_MODEL_DIR,MODEL_FILE_NAME,PREPROCESSOR_FILE_NAME
 import  mlflow
 import dagshub
+from dotenv import load_dotenv
+
+load_dotenv()
 dagshub.init(
     repo_owner="jaivenkateshofficial-lgtm",
     repo_name="cybersecurity",
-    mlflow=True,
-    token=os.getenv("DAGSHUB_TOKEN")
+    mlflow=True
 )
+
+
 
 class ModelTrainer:
 

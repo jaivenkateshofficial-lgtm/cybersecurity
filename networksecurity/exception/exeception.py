@@ -10,5 +10,5 @@ class NetworksecurityException(Exception):
         self.error_message=error_message
 
     def __str__(self):
-        return f"The error occured on the file :{self.file_name} in the line number :{self.line_no} and error message is {self.error_message}"
+        return f"The error occured  on the file :{self.file_name} in the line number :{self.line_no} and error message is {self.error_message}"
     

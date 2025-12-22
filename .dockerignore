@@ -1,0 +1,8 @@
+__pycache__
+*.pyc
+.env
+.venv
+.git
+.gitignore
+node_modules
+prediction_output

@@ -1,21 +1,22 @@
-name:workflow
+name: workflow
+
 on:
   push:
     branches:
-      -main
-      paths-ignore:
-        -README.md
+      - main
+    paths-ignore:
+      - README.md
 
 jobs:
-  intagration:
-    name:continious intagration
-    runs on:ubuntu-lattest
+  integration:
+    name: Continuous Integration
+    runs-on: ubuntu-latest
     steps:
-    -name:checkout code
-    uses:actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    -name:Lint code
-    run: echo "Linting repository"
+      - name: Lint code
+        run: echo "Linting repository"
 
-    -name:LINT Code
-    name:echo "Running the unit tests"
+      - name: Run unit tests
+        run: echo "Running the unit tests"

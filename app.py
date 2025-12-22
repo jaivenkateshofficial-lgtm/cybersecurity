@@ -75,7 +75,7 @@ async def predict_route(request: Request,file: UploadFile = File(...)):
         y_predict = model_wrapper.predict_values(df)
         print(y_predict)
         df['predicted_column'] = y_predict
-        print(f'the pridicted colums{df['predicted_column']}')
+        print(f"the pridicted colums{df['predicted_column']}")
         os.makedirs('prediction_output',exist_ok=True)
         df.to_csv('prediction_output/output.csv')
         table_html = df.to_html(classes='table table-striped')

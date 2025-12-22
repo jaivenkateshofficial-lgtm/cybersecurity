@@ -15,7 +15,7 @@ from sklearn.model_selection import train_test_split
 from networksecurity.logging.logger import logging
 from networksecurity.exception.exeception import NetworksecurityException
 from networksecurity.entiy.config_entity import Dataingestionconfig,TrainingPippeLineConfig
-from networksecurity.componets.data_injestion import Dataingestion
+from networksecurity.componets.data_ingestion import Dataingestion
 from networksecurity.componets.data_validation import Datavalidation
 from networksecurity.entiy.config_entity import DataValidationConfig,DataTranformationConfig,ModelTrainingConfig
 from networksecurity.componets.data_tranformation import DataTransformation

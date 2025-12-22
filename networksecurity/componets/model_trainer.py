@@ -52,17 +52,17 @@ class ModelTrainer:
 
         params={
             "DecisionTreeClassifier":{
-                'criterion':['gini', 'entropy', 'log_loss'],
+                # 'criterion':['gini', 'entropy', 'log_loss'],
                 'max_depth':[10,12,13,5]
             },
              "LogisticRegression": {
-                'solver': ['liblinear', 'saga'],
-                'penalty': ['l1', 'l2'],
+                # 'solver': ['liblinear', 'saga'],
+                # 'penalty': ['l1', 'l2'],
                 'C': [0.1, 1.0, 10.0]
             },
             "RandomForestClassifier":{
-                'criterion':['gini', 'entropy', 'log_loss'],
-                'max_features':['sqrt','log2',None],
+                # 'criterion':['gini', 'entropy', 'log_loss'],
+                # 'max_features':['sqrt','log2',None],
                 'n_estimators': [8,16,32,128,256]
             },
             
@@ -71,9 +71,9 @@ class ModelTrainer:
                 'n_estimators': [8,16,32,64,128,256]
             },
             "GradientBoostingClassifier":{
-                'learning_rate':[.1,.01,.05,.001],
-                'subsample':[0.6,0.7,0.75,0.85,0.9],
-                'criterion':['squared_error', 'friedman_mse'],
+                # 'learning_rate':[.1,.01,.05,.001],
+                # 'subsample':[0.6,0.7,0.75,0.85,0.9],
+                # 'criterion':['squared_error', 'friedman_mse'],
                 'max_features':['sqrt','log2'],
                 'n_estimators': [8,16,32,64,128,256]
             }
